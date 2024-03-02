@@ -84,18 +84,22 @@ def get_image(prompt):
         n=1,
     )
     
-    image_url = response.data[0].url
+   # image_url = response.data[0].url
     return image_url
 
 
 def process(prompt):
     res = user_to_gpt(prompt)
-    im_url = get_image(res.split(",")[0])
+   # im_url = get_image(res.split(",")[0])
     
-    return [res, im_url]
+    return [res]
 
 def initialize():
     res = get_GPT_content("msgHistory.json")
-    im_url = get_image(res.split(",")[0])
+   # im_url = get_image(res.split(",")[0])
     
-    return [res, im_url]
+    return [res]
+
+list = initialize()
+
+print(list[0])
