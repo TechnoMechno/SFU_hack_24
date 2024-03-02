@@ -35,10 +35,32 @@ def update_msg_history(role, input):
         # Write to the file
         with open("msgHistory.json", 'w') as file:
             json.dump(history, file, indent=4)
+    
 
-
-# FUNCTION: get_GPT() Function to send msgHistory.JSON to GPT_API and return string outputted by API
-
+# FUNCTION: call gpt apit and return its output
+def call_GPT(message_history):
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages= message_history
+    )
+    # Create dict to format api's response
+    formatted_response = {
+        "role": "assistant",
+        "content": response.choices[0].message
+    }
+    
+    return formatted_response
+    
+# FUNCTION: send msgHistory.JSON to GPT_API and return its output
+def get_GPT_output(filepath):
+    messages
+    with open(filepath, 'r') as file:
+        chat_data = json.load(file)
+        messages = chat_data['messages']
+        
+    output_array = call_GPT(messages)
+    
+    # update message history
     
 
 # FUNCTION: get_Image() insert prompt and return image url
