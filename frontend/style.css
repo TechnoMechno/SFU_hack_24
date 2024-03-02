@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('images/background.png');
+    background-image: url('../images/background.png');
     background-size: cover;
   }
 
@@ -24,7 +24,7 @@ body {
     flex-direction: column;
   }
 
-  .question-box {
+  .question-box{
     width: 80%;
     background-color: #fff;
     padding: 20px;
@@ -33,7 +33,15 @@ body {
     margin-bottom: 20px;
     text-align: center;
   }
-
+  .id, .password{
+    width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
   .choices {
     width: 80%;
     display: flex;
