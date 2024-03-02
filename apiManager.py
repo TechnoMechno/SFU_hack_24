@@ -43,9 +43,3 @@ def update_msg_history(role, input):
 
 # FUNCTION: get_Image() insert prompt and return image url
 
-
-
-
-
-update_msg_history("user", "You suck!")
-update_msg_history("user", "no You!")
