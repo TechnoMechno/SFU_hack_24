@@ -1,8 +1,12 @@
 from openai import OpenAI
 import json
+from dotenv import load_dotenv, set_key, dotenv_values
+import os
 
-OPENAI_API_KEY = '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'
-client = OpenAI(api_key=OPENAI_API_KEY)
+# Load environment variables from .env file
+load_dotenv()
+secret_key = (dotenv_values('.env'))["OPENAI_API_KEY"]
+client = OpenAI(api_key=secret_key)
 
 #GPT_handler
 
@@ -96,13 +100,3 @@ def initialize():
     im_url = get_image(res.split(",")[0])
     
     return [res, im_url]
-
-list1= initialize()
-
-list2 = process("Hello")
-
-print(list1[0])
-print(list1[1])
-print()
-print(list2[0])
-print(list2[1])

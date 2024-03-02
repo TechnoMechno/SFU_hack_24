@@ -6,7 +6,35 @@
         },
         {
             "role": "assistant",
-            "content": "Great! How can I assist you today?"
+            "content": "How can I help you today?"
+        },
+        {
+            "role": "assistant",
+            "content": "Is there anything specific you need guidance or assistance with?"
+        },
+        {
+            "role": "user",
+            "content": "Hello"
+        },
+        {
+            "role": "assistant",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "assistant",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "user",
+            "content": "Hello"
+        },
+        {
+            "role": "assistant",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "assistant",
+            "content": "Hello! How can I assist you today?"
         },
         {
             "role": "user",
