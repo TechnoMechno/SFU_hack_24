@@ -47,4 +47,4 @@ fi
 
 # Run main.py
 echo "Running main.py..."
-python3 main.py
+python3 backend/main.py
