@@ -1,10 +1,21 @@
+<<<<<<< HEAD
 from flask import Flask, render_template, request, jsonify, after_this_request
 from API_Manager import process, initialize
+=======
+# from APIManager import 
+import requests
+from flask import Flask, after_this_request, jsonify, render_template, request
+
+>>>>>>> 3fb45565eb3d507cd5f1417866aee05dee0bd0a2
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def hello():
+<<<<<<< HEAD
     return render_template("../frontend/gamePage.html")
+=======
+    return render_template("frontend/gamePage.html")
+>>>>>>> 3fb45565eb3d507cd5f1417866aee05dee0bd0a2
 
 
 # @app.route("/add/<session-id>")

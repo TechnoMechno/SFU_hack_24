@@ -1,8 +1,12 @@
 from openai import OpenAI
 import json
+from dotenv import load_dotenv, set_key, dotenv_values
+import os
 
-OPENAI_API_KEY = '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'
-client = OpenAI(api_key=OPENAI_API_KEY)
+# Load environment variables from .env file
+load_dotenv()
+secret_key = (dotenv_values('.env'))["OPENAI_API_KEY"]
+client = OpenAI(api_key=secret_key)
 
 #GPT_handler
 
@@ -88,3 +92,11 @@ def get_image(prompt):
 def process(prompt):
     res = user_to_gpt(prompt)
     im_url = get_image(res.split(",")[0])
+    
+    return [res, im_url]
+
+def initialize():
+    res = get_GPT_content("msgHistory.json")
+    im_url = get_image(res.split(",")[0])
+    
+    return [res, im_url]
