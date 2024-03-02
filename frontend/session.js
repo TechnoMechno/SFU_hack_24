@@ -8,11 +8,12 @@ function getReq() {
     .then(req => {
        console.log(req);
        currentMessage = req;
-        document.getElementById("something").innerHTML = JSON.stringify(req);
+        console.log(document.getElementById("something").innerHTML = JSON.stringify(req));
     })
 }
 
-document.getElementById("weird").addEventListener('click', () => {
+document.getElementById("buttonChoice1").addEventListener('click', () => {
     getReq();
-    document.getElementById("something").src = currentMessage.avatar;
+    document.getElementById("something").innerHTML = "<img src="+currentMessage.avatar+" alt=image>";
+    console.log(currentMessage.avatar)
 })
