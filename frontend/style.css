@@ -26,6 +26,9 @@ body {
   #firstImage{
     width: 400px;
   }
+  #gameImage{
+    width: 100px;
+  }
   .question-box{
     width: 80%;
     background-color: #fff;
