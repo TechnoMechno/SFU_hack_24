@@ -1,10 +1,11 @@
 from openai import OpenAI
 import json
 
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = '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'
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 #GPT_handler
+
 
 # FUNCTION: update_msg_history() Void Function to insert input from either asssitant or user to msgHistory Json file
 def update_msg_history(role, input):
@@ -37,31 +38,53 @@ def update_msg_history(role, input):
             json.dump(history, file, indent=4)
     
 
-# FUNCTION: call gpt apit and return its output
-def call_GPT(message_history):
-    response = client.chat.completions.create(
+# FUNCTION: call gpt apit and return unformatted ouput
+def get_GPT_unformat_output(message_history):
+    api_response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages= message_history
     )
-    # Create dict to format api's response
-    formatted_response = {
-        "role": "assistant",
-        "content": response.choices[0].message
-    }
     
-    return formatted_response
+    content = api_response.choices[0].message.content
     
-# FUNCTION: send msgHistory.JSON to GPT_API and return its output
-def get_GPT_output(filepath):
-    messages
+    # update message history
+    update_msg_history("assistant", content)
+    return content
+    
+# FUNCTION: send msgHistory.JSON to GPT_API and return 'content' from output
+def get_GPT_content(filepath):
     with open(filepath, 'r') as file:
         chat_data = json.load(file)
         messages = chat_data['messages']
         
-    output_array = call_GPT(messages)
+    output_content = get_GPT_unformat_output(messages)
+    return output_content
+
+
+# FUNCTION: Send user's prompt to GPT api, update message history, return 'content' from gptAPI
+def user_to_gpt(prompt):
+    update_msg_history("user", prompt)
+    gpt_output = get_GPT_content("msgHistory.json")
+    return gpt_output
     
-    # update message history
     
 
 # FUNCTION: get_Image() insert prompt and return image url
+def get_image(prompt):
+    #Parse the prompt
+    
+    response = client.images.generate(
+        model="dall-e-3",
+        prompt= prompt,
+        size="1024x1024",
+        quality="standard",
+        n=1,
+    )
+    
+    image_url = response.data[0].url
+    return image_url
 
+
+def process(prompt):
+    res = user_to_gpt(prompt)
+    im_url = get_image(res.split(",")[0])
