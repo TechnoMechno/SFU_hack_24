@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = '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'
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 completion = client.chat.completions.create(
@@ -14,3 +14,5 @@ completion = client.chat.completions.create(
 )
 
 print(completion.choices[0].message)
+
+
