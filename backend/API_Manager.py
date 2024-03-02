@@ -1,7 +1,7 @@
 from openai import OpenAI
 import json
 
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = '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'
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 #GPT_handler
@@ -88,3 +88,21 @@ def get_image(prompt):
 def process(prompt):
     res = user_to_gpt(prompt)
     im_url = get_image(res.split(",")[0])
+    
+    return [res, im_url]
+
+def initialize():
+    res = get_GPT_content("msgHistory.json")
+    im_url = get_image(res.split(",")[0])
+    
+    return [res, im_url]
+
+list1= initialize()
+
+list2 = process("Hello")
+
+print(list1[0])
+print(list1[1])
+print()
+print(list2[0])
+print(list2[1])
