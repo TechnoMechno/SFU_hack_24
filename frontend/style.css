@@ -41,19 +41,10 @@ body {
   }
   .question-box{
     width: 80%;
-    background-color: #fff;
+    background-color: #fbeeff;
+    color: #634087;
     padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .id, .password{
-    width: 80%;
-    background-color: #fff;
-    padding: 20px;
-    border: 2px solid #ccc;
+    border: 2px solid #49FFFF;
     border-radius: 10px;
     margin-bottom: 20px;
     text-align: center;
@@ -71,17 +62,29 @@ body {
     flex-direction: column;
     gap: 10px;
   }
-
-  .choice {
-    padding: 10px;
-    background-color: #eee;
-    border: 1px solid #ccc;
+  #buttonChoice1, #buttonChoice2, #buttonChoice3 {
+    padding: 20px;
+    background-color: #fbeeff;
+    color: #634087;
+    border: 1px solid ;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  #input{
+    width: auto;
+    padding: 20px;
+    background-color: #fbeeff;
+    color: #634087;
+    border: 1px solid #49FFFF;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
   }
 
-  .choice:hover {
-    background-color: #ddd;
+  #buttonChoice1:hover, #buttonChoice2:hover, #buttonChoice3:hover, #input:hover {
+    background-color: #634087;
+    color: #deb7ff;
   }
