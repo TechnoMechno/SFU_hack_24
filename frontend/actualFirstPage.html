@@ -5,21 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Actual First Page</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(730deg); }
+  }
+  .rotate-image {
+    animation: rotate 4s 2;
+  }
+</style>
 </head>
 <body>  
-<img src="../images/test.png" alt="Floating Image" class="floating-image" id="floatingImage">
+
+<img src="../images/test.png" alt="Rotating Image" class="rotate-image">
+
   <script>
-    var floatingImage = document.getElementById("floatingImage");
-    var mouseX, mouseY;
-    
-    function updateImagePosition(event) {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-      floatingImage.style.transform = "translate(" + (mouseX -30) + "px, " + (mouseY-30) + "px)";
-    }
-
-    document.addEventListener("mousemove", updateImagePosition);
-
+    setTimeout(function() {
+      window.location.href = "firstPage.html";
+    }, 5000);
   </script>
 </body>
 </html>
