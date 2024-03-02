@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, jsonify, after_this_request
 # from APIManager import 
 import requests
+from flask import Flask, after_this_request, jsonify, render_template, request
+
 app = Flask(__name__)
 
 sessions = []
@@ -9,7 +10,7 @@ URL = "https://random-data-api.com/api/v3/projects/05db0f7a-fe9e-49d0-b8ec-80fa8
 
 @app.route("/", methods=["GET"])
 def hello():
-    return "Hmmm! You shouldn't be here! Try to go somewhere else...."
+    return render_template("frontend/gamePage.html")
 
 
 # @app.route("/add/<session-id>")
