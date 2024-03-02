@@ -5,10 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bedtime Stories (Chaos Edition)</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  @keyframes shake {
+        0% { transform: translate(0, 0) rotate(0); }
+        25% { transform: translate(-5px, 0) rotate(-5deg); }
+        50% { transform: translate(5px, 0) rotate(5deg); }
+        75% { transform: translate(-5px, 0) rotate(-5deg); }
+        100% { transform: translate(0, 0) rotate(0); }
+    }
+</style>
 </head>
 <body id="first">  
   <div class="game-container">
-    <img id="firstImage" src="../images/test2.png" alt="Image">
+    <img style="animation: shake 1.5s ease infinite;" src="../images/test2.png"  alt="Image">
     <button id="start">START</button>
     </div>
   </div>
@@ -17,6 +26,7 @@
     document.getElementById("start").addEventListener("click", function() {
       window.location.href = "gamePage.html";
     })
+    
   </script>
 </body>
 </html>
