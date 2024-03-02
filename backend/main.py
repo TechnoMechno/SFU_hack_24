@@ -18,8 +18,8 @@ def hello():
 @app.route("/get-message")
 def get_message():
     r = requests.get(URL)
-    print(r.text)
-    return r.text
+    print(r.json)
+    return r.json()
 
 
 if __name__ == "__main__":
@@ -31,3 +31,7 @@ if __name__ == "__main__":
 #     console.log(response);
 #     document.getElementById("<id>").innerHTML = response;
 # }
+
+# ./backend/.venv/Scripts/activate
+# python3 main.py
+# To close -> deactivate
