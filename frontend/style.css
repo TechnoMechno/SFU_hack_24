@@ -24,7 +24,7 @@ body {
     flex-direction: column;
   }
   #firstImage{
-    
+    width: 400px;
   }
   .question-box{
     width: 80%;
