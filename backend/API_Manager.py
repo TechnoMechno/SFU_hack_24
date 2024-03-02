@@ -1,7 +1,6 @@
 from openai import OpenAI
-import json
 from dotenv import load_dotenv, set_key, dotenv_values
-import os
+import json
 
 # Load environment variables from .env file
 load_dotenv()
