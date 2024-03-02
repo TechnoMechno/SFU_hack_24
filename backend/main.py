@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, after_this_request
+# from APIManager import 
 import requests
 app = Flask(__name__)
 
@@ -17,6 +18,10 @@ def hello():
 
 @app.route("/get-message")
 def get_message():
+    @after_this_request
+    def add_header(response):
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
     r = requests.get(URL)
     print(r.json)
     return r.json()
@@ -25,11 +30,14 @@ def get_message():
 if __name__ == "__main__":
   app.run(debug=True)
 
-# function getMockMessage() {
+# function getHello() {
 #     const url = 'http://localhost:5000/get-message'
-#     const response = fetch(url)
-#     console.log(response);
-#     document.getElementById("<id>").innerHTML = response;
+#     fetch(url)
+#     .then(response => response.json())  
+#     .then(json => {
+#         console.log(json);
+#         document.getElementById("demo").innerHTML = JSON.stringify(json)
+#     })
 # }
 
 # ./backend/.venv/Scripts/activate
