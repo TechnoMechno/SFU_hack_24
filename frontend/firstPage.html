@@ -11,12 +11,14 @@
     <div class="question-box">
       <p>Image</p>
     </div>
-    <div class="login">
-        <button class="google">sign in with Google</button>
-        <button class="facebook">sign in with Facebook</button>
-      </div>
+    <button id="start">START</button>
     </div>
   </div>
   
+  <script>
+    document.getElementById("start").addEventListener("click", function() {
+      window.location.href = "loginPage.html";
+    })
+  </script>
 </body>
 </html>
