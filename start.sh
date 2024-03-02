@@ -9,12 +9,13 @@ install_dependencies() {
     echo "Installing Flask and OpenAPI dependencies..."
     pip install Flask
     pip install openapi
+    pip install python-dotenv
 }
 
 activate_env() {
     # Create and activate virtual environment
     echo "Creating and activating virtual environment..."
-    source .venv/bin/activate
+    source backend/.venv/bin/activate
 }
 
 
