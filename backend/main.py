@@ -4,10 +4,23 @@ from API_Manager import process, initialize
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
-def hello():
-  return render_template("gamePage.html")
+def actualFirst():
+  return render_template("actualFirstPage.html")
+
 # @app.route("/add/<session-id>")
 #     return session.push(sess)
+
+@app.route("/init")
+def firstPage():
+  return render_template("firstPage.html")
+
+@app.route("/game")
+def gamePage():
+  return render_template("gamePage.html")
+
+@app.route("/last")
+def lastPage():
+  return render_template("actualFirstPage.html")
 
 @app.route("/get-message")
 def get_message():
