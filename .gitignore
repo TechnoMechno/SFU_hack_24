@@ -1,5 +1,5 @@
 /backend/.venv
 /tempenv
 /backend/.DS_Store
-
+/.venv
 /backend/.env

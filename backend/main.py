@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def hello():
+  return render_template("gamePage.html")
 # @app.route("/add/<session-id>")
 #     return session.push(sess)
 

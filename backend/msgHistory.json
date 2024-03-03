@@ -51,6 +51,30 @@
         {
             "role": "assistant",
             "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "assistant",
+            "content": "Hello! How can I help you today?"
+        },
+        {
+            "role": "assistant",
+            "content": "How can I assist you today?"
+        },
+        {
+            "role": "assistant",
+            "content": "Is there something specific you need help with?"
+        },
+        {
+            "role": "assistant",
+            "content": "Is there something specific you need help with today?"
+        },
+        {
+            "role": "assistant",
+            "content": "Is there something specific you need assistance with today?"
+        },
+        {
+            "role": "assistant",
+            "content": "How can I assist you today?"
         }
     ]
 }

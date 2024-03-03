@@ -9,13 +9,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('../images/background.png');
+  background-image: url('images/background.png');
   background-size: cover;
 }
 
 
 #second{
-  background-image: url('../images/background3.png');
+  background-image: url('images/background3.png');
   background-size: cover;
   animation: rotate 1s 1;
 }

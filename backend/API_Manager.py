@@ -75,7 +75,7 @@ def user_to_gpt(prompt):
 # FUNCTION: get_Image() insert prompt and return image url
 def get_image(prompt):
     #Parse the prompt
-    
+
     response = client.images.generate(
         model="dall-e-3",
         prompt= prompt,
@@ -84,7 +84,7 @@ def get_image(prompt):
         n=1,
     )
     
-   # image_url = response.data[0].url
+    image_url = response.data[0].url
     return image_url
 
 
@@ -92,13 +92,13 @@ def process(prompt):
     res = user_to_gpt(prompt)
    # im_url = get_image(res.split(",")[0])
     
-    return [res]
+    return res
 
 def initialize():
     res = get_GPT_content("msgHistory.json")
    # im_url = get_image(res.split(",")[0])
     
-    return [res]
+    return res
 
 list = initialize()
 
