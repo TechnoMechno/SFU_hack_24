@@ -97,9 +97,5 @@ def process(prompt):
 def initialize():
     res = get_GPT_content("msgHistory.json")
    # im_url = get_image(res.split(",")[0])
-    
     return res
 
-list = initialize()
-
-print(list[0])
