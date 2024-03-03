@@ -3,6 +3,7 @@
 
 install_dependencies() {
     echo "Installing Flask and OpenAPI dependencies..."
+    pip install --upgrade pip
     pip install flask
     pip install openai
     pip install python-dotenv
@@ -23,7 +24,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     source .venv/bin/activate
     install_dependencies
     echo "Running main.py..."
-    python3 backend/main.py
+    cd backend
+    python3 main.py
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux
     echo "Detected Linux. Make sure you have Python and pip installed."
@@ -32,7 +34,8 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     source .venv/bin/activate
     install_dependencies
     echo "Running main.py..."
-    python3 backend/main.py
+    cd backend
+    python3 main.py
 elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
     # Windows
     echo "Detected Windows. This script does not support Windows."
@@ -41,7 +44,8 @@ elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
     ./.venv/Scripts/activate
     install_dependencies
     echo "Running main.py..."
-    python backend/main.py
+    cd backend
+    python main.py
 else
     echo "Unsupported operating system."
     exit 1
@@ -52,4 +56,3 @@ fi
 # pip install -r requirements.txt
 
 # Run main.py
-python3 backend/main.py

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, after_this_request
+from flask import Flask, render_template, redirect, after_this_request
 from API_Manager import process, initialize
 
 app = Flask(__name__)
@@ -20,7 +20,7 @@ def gamePage():
 
 @app.route("/last")
 def lastPage():
-  return render_template("actualFirstPage.html")
+  return redirect("/")
 
 @app.route("/get-message")
 def get_message():
