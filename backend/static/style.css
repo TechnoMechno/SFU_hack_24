@@ -39,7 +39,7 @@ body {
   #gameImage{
     width: 100px;
   }
-  .question-box{
+  #question-box{
     width: 80%;
     background-color: #fbeeff;
     color: #634087;
@@ -95,3 +95,16 @@ body {
     background-color: #634087;
     color: #deb7ff;
   }
+
+ #something img {
+    position: absolute; /* Positioning within container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning to center */
+    max-width: none; /* Remove max-width restriction */
+    max-height: none; /* Remove max-height restriction */
+    width: auto; /* Reset width */
+    height: auto; /* Reset height */
+    max-width: 100%; /* Set maximum width to container width */
+    max-height: 100%; /* Set maximum height to container height */
+}

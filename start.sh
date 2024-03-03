@@ -7,6 +7,7 @@ install_dependencies() {
     pip install flask
     pip install openai
     pip install python-dotenv
+    pip install flask-cors
 }
 
 activate_env() {

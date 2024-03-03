@@ -6,7 +6,7 @@
         },
         {
             "role": "user",
-            "content": "Put me in a ridiculous scenario and give me 3 actions I can choose from. Continue the story based on the action i choose. Repeat this process forever until i tell you to conclude the story"
+            "content": "Put me in a ridiculous scenario and give me 3 actions I can choose from in 1,2,3 bullet points. Continue the story based on the action i choose. Repeat this process forever until i tell you to conclude the story."
         }
     ]
 }

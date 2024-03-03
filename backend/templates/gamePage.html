@@ -9,18 +9,40 @@
 </head>
 <body id="second">  
   <div class="game-container">
-    <div id="something"></div>
-    <div class="question-box">
-      <p>game question</p>
+    <div id="something" style="width: 400px; height: 400px; overflow: hidden; position: relative;"></div>
+    <div id="question-box">
+      <p>Game question</p>
     </div>
-    <div class="choices">
-      <button id="buttonChoice1" >check</button>
-      <button id="buttonChoice2"></button>
-      <button id="buttonChoice3"></button>
-    </div>
+    <input type="text" id="user_input">
     <br>
     <button id="input">Submit</button>
   </div>
+    <script>
+      let message;
+
+      function getRe() {
+          const url = 'http://localhost:5000/get-message';
+          return fetch(url)
+              .then(req => req.json())
+              .then(data => {
+                  message = data; // Convert JSON data to a string
+                  console.log(message);
+                  return message; // Return the JSON string
+              });
+      }
+
+      window.onload = function() {
+          getRe().then((message) => {
+              let messageData = message;
+              document.getElementById("question-box").innerText = messageData[0];
+              document.getElementById("something").innerHTML = "<img src="+messageData[1]+" alt=image>";
+              console.log(messageData[1]);
+          }).catch(error => {
+              console.error('Error fetching data:', error);
+          });
+        }
+  </script>
+
   <script src="../static/session.js"></script>
   <script src="../static/end.js"></script>
 </body>
