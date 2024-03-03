@@ -3,6 +3,7 @@
   100% { transform: rotate(360deg); }
 }
 body {
+  background-color: black;
   margin: 0;
   padding: 0;
   display: flex;
@@ -12,8 +13,6 @@ body {
   background-image: url('images/background.png');
   background-size: cover;
 }
-
-
 #second{
   background-image: url('images/background3.png');
   background-size: cover;
@@ -51,8 +50,8 @@ body {
     text-align: center;
   }
   #start{
-    background-color: #fbeeff;
-    color: #634087;
+    background-color: #534087;
+    color: #fbeeff;
     padding: 20px;
     font-weight: bold;
     font-size: 15px;
@@ -62,7 +61,7 @@ body {
     gap: 10px;
   }
   #start:hover{
-    background-color: #534087;
+    background-color: #222424;
     color: #fbeeff;
   }
   .choices {
@@ -81,16 +80,16 @@ body {
     transition: background-color 0.3s ease;
     text-align: center;
   }
-  #input{
-    width: auto;
-    padding: 20px;
-    background-color: #fbeeff;
-    color: #634087;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
-  }
+    #input{
+      width: auto;
+      padding: 20px;
+      background-color: #fbeeff;
+      color: #634087;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
 
   #buttonChoice1:hover, #buttonChoice2:hover, #buttonChoice3:hover, #input:hover {
     background-color: #634087;
