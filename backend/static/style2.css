@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('images/background2.png');
+    background-image: url('../static/images/background2.png');
     background-size: cover;
     animation: fadeInBackgroundImage 4s ease forwards;
 }
